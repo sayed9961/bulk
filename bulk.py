@@ -25,7 +25,7 @@ cyan = "\033[96m"
 end = '\033[0m'
 print ("\033[35m")
 
-print ("	Mojibrsm...!! /n My User Bulk Sms Sender System!  You're welcome  ")
+print ("	Mojibrsm...!!  My User Bulk Sms Sender System!  You're welcome  ")
 
 
 print ("""
